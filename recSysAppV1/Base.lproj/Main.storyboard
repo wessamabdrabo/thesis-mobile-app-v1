@@ -24,32 +24,24 @@
             </objects>
             <point key="canvasLocation" x="353" y="-671"/>
         </scene>
-        <!--Categories View Controller-->
-        <scene sceneID="OOm-Qv-t8Y">
+        <!--Menu View Controller-->
+        <scene sceneID="cCI-zh-EUi">
             <objects>
-                <viewController storyboardIdentifier="leftMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kAi-Av-hkb" customClass="CategoriesViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="leftMenuViewController" title="Menu View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C0n-5B-ja3" customClass="MenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yJf-U9-3He"/>
-                        <viewControllerLayoutGuide type="bottom" id="pZS-Ca-uzw"/>
+                        <viewControllerLayoutGuide type="top" id="jWp-jb-2sl"/>
+                        <viewControllerLayoutGuide type="bottom" id="bMW-5I-at3"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aTi-TG-jCI">
+                    <view key="view" contentMode="scaleToFill" id="xs3-Jf-HZg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="categories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXh-55-6bL">
-                                <rect key="frame" x="76" y="116" width="81" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6GI-a1-3ap" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nB6-9S-h47" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="739" y="-671"/>
+            <point key="canvasLocation" x="767" y="-671"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="ufC-wZ-h7g">
@@ -309,7 +301,7 @@
         <!--Home-->
         <scene sceneID="lvZ-HL-sAk">
             <objects>
-                <tableViewController title="Home" id="t5f-Lh-NbK" customClass="HomeTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="firstViewController" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t5f-Lh-NbK" customClass="HomeTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="vZZ-Uo-uKh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -488,6 +480,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lhi-Ci-Ryy"/>
+        <segue reference="56e-nn-Hkj"/>
     </inferredMetricsTieBreakers>
 </document>

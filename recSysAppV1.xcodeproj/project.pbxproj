@@ -24,7 +24,7 @@
 		86F7946C1B69924C00B03B1B /* VideosDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F7946B1B69924C00B03B1B /* VideosDataManager.m */; };
 		86F794781B6A767800B03B1B /* Videos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86F794771B6A767800B03B1B /* Videos.plist */; };
 		86F7947B1B6AF2BD00B03B1B /* SideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F7947A1B6AF2BD00B03B1B /* SideMenu.m */; };
-		86F7947E1B6AFBC100B03B1B /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F7947D1B6AFBC100B03B1B /* CategoriesViewController.m */; };
+		86F7948C1B6BAF7900B03B1B /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F7948B1B6BAF7900B03B1B /* MenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +68,8 @@
 		86F794771B6A767800B03B1B /* Videos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Videos.plist; sourceTree = "<group>"; };
 		86F794791B6AF2BD00B03B1B /* SideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenu.h; sourceTree = "<group>"; };
 		86F7947A1B6AF2BD00B03B1B /* SideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenu.m; sourceTree = "<group>"; };
-		86F7947C1B6AFBC100B03B1B /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
-		86F7947D1B6AFBC100B03B1B /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		86F7948A1B6BAF7900B03B1B /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		86F7948B1B6BAF7900B03B1B /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		AFB888CE747D4F29FA5E1455 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9ABCE99FB10E24865332F98 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,8 +193,8 @@
 			children = (
 				86F794791B6AF2BD00B03B1B /* SideMenu.h */,
 				86F7947A1B6AF2BD00B03B1B /* SideMenu.m */,
-				86F7947C1B6AFBC100B03B1B /* CategoriesViewController.h */,
-				86F7947D1B6AFBC100B03B1B /* CategoriesViewController.m */,
+				86F7948A1B6BAF7900B03B1B /* MenuViewController.h */,
+				86F7948B1B6BAF7900B03B1B /* MenuViewController.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -379,12 +379,12 @@
 				86A014781B6573D800CB67F4 /* SignUpViewController.m in Sources */,
 				86A0144F1B6540DF00CB67F4 /* AppDelegate.m in Sources */,
 				86A014811B65743500CB67F4 /* HomeTableViewController.m in Sources */,
+				86F7948C1B6BAF7900B03B1B /* MenuViewController.m in Sources */,
 				86A0144C1B6540DF00CB67F4 /* main.m in Sources */,
 				862E997F1B65872900188E2E /* RatingViewController.m in Sources */,
 				86F7947B1B6AF2BD00B03B1B /* SideMenu.m in Sources */,
 				86F7946C1B69924C00B03B1B /* VideosDataManager.m in Sources */,
 				86A0147E1B65742700CB67F4 /* PreferencesTableViewController.m in Sources */,
-				86F7947E1B6AFBC100B03B1B /* CategoriesViewController.m in Sources */,
 				86A014721B655A6800CB67F4 /* DetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
