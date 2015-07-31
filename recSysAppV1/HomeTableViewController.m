@@ -89,9 +89,14 @@
         if(vid != nil){
             cell.detailTextLabel.text = vid.duration;
             cell.textLabel.text = vid.title;
+            cell.tag = indexPath.row;
             NSString *imageUrl = vid.imgName;
             [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:imageUrl]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                cell.imageView.image = [UIImage imageWithData:data];
+               // if (cell.tag == indexPath.row) {
+                    cell.imageView.image = [UIImage imageWithData:data];
+                    [cell setNeedsLayout];
+                //}
+                //[tableView reloadRowsAtIndexPaths:[[NSArray alloc] initWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationNone];
             }];
         }
     }

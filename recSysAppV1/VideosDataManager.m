@@ -32,6 +32,7 @@
 }
 
 -(NSArray*) getCategoryVideosName:(NSString*)category{
+    NSLog(@"get viedoes for cat: %@",category);
     NSMutableArray* categoryVids = [[NSMutableArray alloc] init];
     for (NSDictionary* vidDict in self.videosData) {
         if ([[vidDict objectForKey:@"category"] isEqualToString:category]) {

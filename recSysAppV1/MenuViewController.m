@@ -13,6 +13,8 @@
 
 @interface MenuViewController ()
 @property (strong, readwrite, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) NSArray* titles;
+@property (strong, nonatomic) NSArray* images;
 @end
 
 @implementation MenuViewController
@@ -20,6 +22,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+     _titles = @[@"Home", @"Profile", /*@"Log Out", @" ",*/ @"Categories",
+                        @"   Activism", @"   Arts", @"   Business",@"   Computers",
+                        @"   Creativity",@"   Design",@"   Economics", @"   Environment",
+                        @"   Feminism",@"   History", @"   Math", @"   Music",
+                        @"   Philosophy",@"   Photography", @"   Psychology",
+                        @"   Software", @"   Sports"];
+     _images = @[@"IconHome", @"IconProfile", @"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty"/*,@"IconEmpty",@"IconEmpty"*/];
+
     self.tableView = ({
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, (self.view.frame.size.height - 54 * 5) / 2.0f, self.view.frame.size.width, 54 * 5) style:UITableViewStylePlain];
         tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
@@ -42,25 +53,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    CategoryTableViewController* categoryViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"categoriesViewController"];
-    categoryViewController.categoryName = @"activism";
-    switch (indexPath.row) {
-        case 0: //Home
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"firstViewController"]]
-                                                         animated:YES];
-            [self.sideMenuViewController hideMenuViewController];
-            break;
-        case 3: //activism
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:categoryViewController]];
-            [self.sideMenuViewController hideMenuViewController];
-            break;
-        /*case 1: //Profile
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"secondViewController"]]
-                                                         animated:YES];
-            [self.sideMenuViewController hideMenuViewController];
-            break;*/
-        default:
-            break;
+    
+    if(indexPath.row == 0){ //Home
+        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"firstViewController"]]
+                                                     animated:YES];
+        [self.sideMenuViewController hideMenuViewController];
+    }
+    else if(indexPath.row > 2){ //Category
+        CategoryTableViewController* categoryViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"categoriesViewController"];
+        categoryViewController.categoryName = [_titles objectAtIndex:indexPath.row];
+        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:categoryViewController]];
+        [self.sideMenuViewController hideMenuViewController];
     }
 }
 
@@ -100,15 +103,8 @@
     
     cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:indexPath.row <= 2 ? 21 : 15];
 
-    NSArray *titles = @[@"Home", @"Profile", /*@"Log Out", @" ",*/ @"Categories",
-                        @"   Activism", @"   Arts", @"   Business",@"   Computers",
-                        @"   Creativity",@"   Design",@"   Economics", @"   Environment",
-                        @"   Feminism",@"   History", @"   Math", @"   Music",
-                        @"   Philosophy",@"   Photography", @"   Psychology",
-                        @"   Software", @"   Sports"];
-    NSArray *images = @[@"IconHome", @"IconProfile", @"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty",@"IconEmpty"/*,@"IconEmpty",@"IconEmpty"*/];
-    cell.textLabel.text = titles[indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
+    cell.textLabel.text = _titles[indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:_images[indexPath.row]];
     
     return cell;
 }

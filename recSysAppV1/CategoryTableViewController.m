@@ -21,7 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _categoryVideos = [[VideosDataManager sharedManager] getCategoryVideosName:self.categoryName];
+    _categoryVideos = [[VideosDataManager sharedManager] getCategoryVideosName:[[self.categoryName lowercaseString]stringByTrimmingCharactersInSet:
+                       [NSCharacterSet whitespaceCharacterSet]]];
     self.navigationItem.title = self.categoryName;
 }
 
@@ -50,6 +51,7 @@
     NSString *imageUrl = video.imgName;
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:imageUrl]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         cell.imageView.image = [UIImage imageWithData:data];
+        [cell setNeedsLayout];
     }];
     return cell;
 }
