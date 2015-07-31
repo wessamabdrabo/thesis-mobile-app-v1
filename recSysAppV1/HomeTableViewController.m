@@ -109,17 +109,7 @@
     
     if([segue.identifier isEqualToString:@"detailSegue"]){
         UITableViewCell *cell = (UITableViewCell*) sender;
-        
         DetailsViewController* detailsViewController = [segue destinationViewController];
-        
-//        VideosDataManager* vidDataManger =  [VideosDataManager sharedManager];
-//        NSDictionary* dict = vidDataManger.videosData[0];
-//        VideoCast* vid = [[VideoCast alloc] init];
-//        vid.title = [dict objectForKey:@"title"];
-//        vid.longDescr = [dict objectForKey:@"descr"];
-//        vid.imgName = [dict objectForKey:@"imgUrl"];
-//        vid.url = [dict objectForKey:@"vidUrl"];
-        
         detailsViewController.videoID = cell.textLabel.text;
     }
 }

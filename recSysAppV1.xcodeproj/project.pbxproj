@@ -25,6 +25,7 @@
 		86F794781B6A767800B03B1B /* Videos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86F794771B6A767800B03B1B /* Videos.plist */; };
 		86F7947B1B6AF2BD00B03B1B /* SideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F7947A1B6AF2BD00B03B1B /* SideMenu.m */; };
 		86F7948C1B6BAF7900B03B1B /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F7948B1B6BAF7900B03B1B /* MenuViewController.m */; };
+		86F794901B6BD1A400B03B1B /* CategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F7948F1B6BD1A400B03B1B /* CategoryTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		86F7947A1B6AF2BD00B03B1B /* SideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenu.m; sourceTree = "<group>"; };
 		86F7948A1B6BAF7900B03B1B /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		86F7948B1B6BAF7900B03B1B /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		86F7948E1B6BD1A400B03B1B /* CategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewController.h; sourceTree = "<group>"; };
+		86F7948F1B6BD1A400B03B1B /* CategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewController.m; sourceTree = "<group>"; };
 		AFB888CE747D4F29FA5E1455 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9ABCE99FB10E24865332F98 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +147,7 @@
 		86A014481B6540DF00CB67F4 /* recSysAppV1 */ = {
 			isa = PBXGroup;
 			children = (
+				86F7948D1B6BD12000B03B1B /* Categories */,
 				86F794861B6BA3FD00B03B1B /* Rating */,
 				86F794851B6BA3F700B03B1B /* Home */,
 				86F794841B6BA3DA00B03B1B /* Profile */,
@@ -235,6 +239,15 @@
 				862E997E1B65872900188E2E /* RatingViewController.m */,
 			);
 			name = Rating;
+			sourceTree = "<group>";
+		};
+		86F7948D1B6BD12000B03B1B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				86F7948E1B6BD1A400B03B1B /* CategoryTableViewController.h */,
+				86F7948F1B6BD1A400B03B1B /* CategoryTableViewController.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				862E99851B665E3600188E2E /* VideoCast.m in Sources */,
+				86F794901B6BD1A400B03B1B /* CategoryTableViewController.m in Sources */,
 				86A014781B6573D800CB67F4 /* SignUpViewController.m in Sources */,
 				86A0144F1B6540DF00CB67F4 /* AppDelegate.m in Sources */,
 				86A014811B65743500CB67F4 /* HomeTableViewController.m in Sources */,

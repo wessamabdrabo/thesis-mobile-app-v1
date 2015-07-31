@@ -7,6 +7,7 @@
 //
 
 #import "MenuViewController.h"
+#import "CategoryTableViewController.h"
 #import "UIViewController+RESideMenu.h"
 
 
@@ -41,10 +42,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    CategoryTableViewController* categoryViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"categoriesViewController"];
+    categoryViewController.categoryName = @"activism";
     switch (indexPath.row) {
         case 0: //Home
             [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"firstViewController"]]
                                                          animated:YES];
+            [self.sideMenuViewController hideMenuViewController];
+            break;
+        case 3: //activism
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:categoryViewController]];
             [self.sideMenuViewController hideMenuViewController];
             break;
         /*case 1: //Profile
