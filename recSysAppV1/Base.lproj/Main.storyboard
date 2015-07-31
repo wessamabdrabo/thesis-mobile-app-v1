@@ -72,7 +72,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Nvb-eM-GSf" kind="showDetail" identifier="categoryVideoDetailSegue" trigger="accessoryAction" id="dqR-rK-hQp"/>
+                                    <segue destination="Nvb-eM-GSf" kind="show" identifier="categoryVideoDetailSegue" trigger="accessoryAction" id="dqR-rK-hQp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
