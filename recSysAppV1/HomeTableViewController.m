@@ -10,6 +10,7 @@
 #import "VideoCast.h"
 #import "DetailsViewController.h"
 #import "VideosDataManager.h"
+#import "HomeTableViewCell.h"
 
 @interface HomeTableViewController (){
     NSArray* sectionsHeaderTitles;
@@ -66,7 +67,14 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeCell" forIndexPath:indexPath];
+    //HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeCell" forIndexPath:indexPath];
+    static NSString *homeCellId = @"homeCustomCell";
+    
+    HomeTableViewCell *cell = (HomeTableViewCell *)[tableView dequeueReusableCellWithIdentifier:homeCellId];
+    if (cell == nil){
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"HomeTableViewCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
     
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
@@ -87,16 +95,13 @@
     if(row < [data count]){
         VideoCast* vid = [data objectAtIndex:row];
         if(vid != nil){
-            cell.detailTextLabel.text = vid.duration;
-            cell.textLabel.text = vid.title;
+            cell.speakerLabel.text = vid.speaker;
+            cell.descrLabel.text = vid.title;
             cell.tag = indexPath.row;
             NSString *imageUrl = vid.imgName;
             [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:imageUrl]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-               // if (cell.tag == indexPath.row) {
-                    cell.imageView.image = [UIImage imageWithData:data];
-                    [cell setNeedsLayout];
-                //}
-                //[tableView reloadRowsAtIndexPaths:[[NSArray alloc] initWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationNone];
+                cell.img.image = [UIImage imageWithData:data];
+                [cell setNeedsLayout];
             }];
         }
     }
@@ -107,15 +112,36 @@
     return [sectionsHeaderTitles objectAtIndex:section];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 108;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"detailSegue" sender:self];
+}
 
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if([segue.identifier isEqualToString:@"detailSegue"]){
-        UITableViewCell *cell = (UITableViewCell*) sender;
+        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        NSInteger section = path.section;
+        NSArray* data = [[NSArray alloc]init];
+        
+        if(section == 0)
+            data = section1;
+        if(section == 1)
+            data = section2;
+        if(section == 2)
+            data = section3;
+        if(section == 3)
+            data = section4;
+        if(section == 4)
+            data = section5;
+        VideoCast* video = [data objectAtIndex:path.row];
         DetailsViewController* detailsViewController = [segue destinationViewController];
-        detailsViewController.videoID = cell.textLabel.text;
+        detailsViewController.videoID = video.title;
     }
 }
 

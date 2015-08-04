@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8269D3B35A667984390A475C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB888CE747D4F29FA5E1455 /* libPods.a */; };
+		862338281B7108190053B59B /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 862338261B7108190053B59B /* HomeTableViewCell.m */; };
+		862338291B7108190053B59B /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 862338271B7108190053B59B /* HomeTableViewCell.xib */; };
 		862E997F1B65872900188E2E /* RatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 862E997E1B65872900188E2E /* RatingViewController.m */; };
 		862E99851B665E3600188E2E /* VideoCast.m in Sources */ = {isa = PBXBuildFile; fileRef = 862E99841B665E3600188E2E /* VideoCast.m */; };
 		86A0144C1B6540DF00CB67F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A0144B1B6540DF00CB67F4 /* main.m */; };
@@ -40,6 +42,9 @@
 
 /* Begin PBXFileReference section */
 		169B34BB162EB2F6D8925C8B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		862338251B7108190053B59B /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		862338261B7108190053B59B /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		862338271B7108190053B59B /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		862E997D1B65872900188E2E /* RatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingViewController.h; sourceTree = "<group>"; };
 		862E997E1B65872900188E2E /* RatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingViewController.m; sourceTree = "<group>"; };
 		862E99831B665E3600188E2E /* VideoCast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCast.h; sourceTree = "<group>"; };
@@ -228,6 +233,9 @@
 			children = (
 				86A0147F1B65743500CB67F4 /* HomeTableViewController.h */,
 				86A014801B65743500CB67F4 /* HomeTableViewController.m */,
+				862338251B7108190053B59B /* HomeTableViewCell.h */,
+				862338261B7108190053B59B /* HomeTableViewCell.m */,
+				862338271B7108190053B59B /* HomeTableViewCell.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -337,6 +345,7 @@
 				86D2EDA41B66DA3F0045BC15 /* Categories.plist in Resources */,
 				86A0145A1B6540DF00CB67F4 /* LaunchScreen.xib in Resources */,
 				86A014571B6540DF00CB67F4 /* Images.xcassets in Resources */,
+				862338291B7108190053B59B /* HomeTableViewCell.xib in Resources */,
 				86F794781B6A767800B03B1B /* Videos.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +406,7 @@
 				86A0144C1B6540DF00CB67F4 /* main.m in Sources */,
 				862E997F1B65872900188E2E /* RatingViewController.m in Sources */,
 				86F7947B1B6AF2BD00B03B1B /* SideMenu.m in Sources */,
+				862338281B7108190053B59B /* HomeTableViewCell.m in Sources */,
 				86F7946C1B69924C00B03B1B /* VideosDataManager.m in Sources */,
 				86A0147E1B65742700CB67F4 /* PreferencesTableViewController.m in Sources */,
 				86A014721B655A6800CB67F4 /* DetailsViewController.m in Sources */,
