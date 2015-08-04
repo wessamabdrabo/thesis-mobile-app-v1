@@ -10,6 +10,7 @@
 #import "VideosDataManager.h"
 #import "VideoCast.h"
 #import "DetailsViewController.h"
+#import "HomeTableViewCell.h"
 
 @interface CategoryTableViewController (){
     NSArray* _categoryVideos;
@@ -42,7 +43,7 @@
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+/*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"videoDetailCell" forIndexPath:indexPath];
     
     VideoCast* video = [_categoryVideos objectAtIndex:indexPath.row];
@@ -54,18 +55,49 @@
         [cell setNeedsLayout];
     }];
     return cell;
+}*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeCell" forIndexPath:indexPath];
+    static NSString *homeCellId = @"homeCustomCell";
+    
+    HomeTableViewCell *cell = (HomeTableViewCell *)[tableView dequeueReusableCellWithIdentifier:homeCellId];
+    if (cell == nil){
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"HomeTableViewCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    VideoCast* vid = [_categoryVideos objectAtIndex:indexPath.row];
+
+    cell.speakerLabel.text = vid.speaker;
+    cell.descrLabel.text = vid.title;
+    cell.tag = indexPath.row;
+    NSString *imageUrl = vid.imgName;
+    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:imageUrl]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        cell.img.image = [UIImage imageWithData:data];
+        [cell setNeedsLayout];
+    }];
+    
+    return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 108;
+}
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"categoryVideoDetailSegue" sender:self];
+}
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"categoryVideoDetailSegue"]){
-        UITableViewCell *cell = (UITableViewCell*) sender;
+        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        VideoCast *vid = [_categoryVideos objectAtIndex:path.row];
         DetailsViewController* detailsViewController = [segue destinationViewController];
-        detailsViewController.videoID = cell.textLabel.text;
+        detailsViewController.videoID = vid.title;
     }
 }
 
