@@ -11,6 +11,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "RatingViewController.h"
 #import "VideosDataManager.h"
+#import "MoreDetailsViewController.h"
 
 @interface DetailsViewController (){
     MPMoviePlayerViewController *_moviePlayerController;
@@ -25,6 +26,9 @@
     _video = [[VideosDataManager sharedManager] getVideobyID:self.videoID];
     self.videoTitle.text = _video.title;
     self.videoLongDescr.text = _video.longDescr;
+    self.speakerLabel.text = _video.speaker;
+    self.postedOnLabel.text = _video.posted_on;
+    self.durationLabel.text = _video.duration;
     NSString *imageUrl = _video.imgName;
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:imageUrl]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         self.imageView.image = [UIImage imageWithData:data];
@@ -37,18 +41,15 @@
 }
 
 #pragma mark - Navigation
-/*
- // In a storyboard-based application, you will often want to do a little preparation before navigation
+
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- if([segue.identifier isEqualToString:@"showRating"]){
- RatingViewController *ratingViewController =
- [self.view addSubview:ratingViewController.view];
+     if ([segue.identifier isEqualToString:@"moreDescr"]) {
+         MoreDetailsViewController* moreDetails = segue.destinationViewController;
+         moreDetails.descrText = _video.longDescr;
+     }
+     
  }
- 
- }
- */
+
 
 #pragma mark - Video player
 
@@ -94,5 +95,7 @@
     
     //Show rating
     [self performSegueWithIdentifier:@"showRating" sender:self];
+}
+- (IBAction)moreBtnClicked:(id)sender {
 }
 @end

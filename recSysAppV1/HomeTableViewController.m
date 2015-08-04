@@ -97,6 +97,7 @@
         if(vid != nil){
             cell.speakerLabel.text = vid.speaker;
             cell.descrLabel.text = vid.title;
+            cell.durationLabel.text = vid.duration;
             cell.tag = indexPath.row;
             NSString *imageUrl = vid.imgName;
             [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:imageUrl]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {

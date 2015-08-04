@@ -14,7 +14,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *videoTitle;
 @property (weak, nonatomic) IBOutlet UITextView *videoLongDescr;
 @property (strong, nonatomic) NSString* videoID;
-//@property (strong, nonatomic) NSString* vidTitleText;
-//@property (strong, nonatomic) NSString* vidLongDescrText;
-//@property (strong, nonatomic) UIImage* vidImage;
+@property (weak, nonatomic) IBOutlet UILabel *postedOnLabel;
+@property (weak, nonatomic) IBOutlet UILabel *durationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *speakerLabel;
+- (IBAction)moreBtnClicked:(id)sender;
+
 @end

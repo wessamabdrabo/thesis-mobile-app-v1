@@ -43,20 +43,6 @@
 }
 
 
-/*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"videoDetailCell" forIndexPath:indexPath];
-    
-    VideoCast* video = [_categoryVideos objectAtIndex:indexPath.row];
-    cell.textLabel.text = video.title;
-    cell.detailTextLabel.text = video.duration;
-    NSString *imageUrl = video.imgName;
-    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:imageUrl]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        cell.imageView.image = [UIImage imageWithData:data];
-        [cell setNeedsLayout];
-    }];
-    return cell;
-}*/
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     //HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeCell" forIndexPath:indexPath];
     static NSString *homeCellId = @"homeCustomCell";
@@ -71,6 +57,7 @@
 
     cell.speakerLabel.text = vid.speaker;
     cell.descrLabel.text = vid.title;
+    cell.durationLabel.text = vid.duration;
     cell.tag = indexPath.row;
     NSString *imageUrl = vid.imgName;
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:imageUrl]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
