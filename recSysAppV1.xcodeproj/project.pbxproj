@@ -52,7 +52,7 @@
 		862E997E1B65872900188E2E /* RatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingViewController.m; sourceTree = "<group>"; };
 		862E99831B665E3600188E2E /* VideoCast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCast.h; sourceTree = "<group>"; };
 		862E99841B665E3600188E2E /* VideoCast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCast.m; sourceTree = "<group>"; };
-		86A014461B6540DF00CB67F4 /* recSysAppV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recSysAppV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86A014461B6540DF00CB67F4 /* MiRec..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiRec..app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A0144A1B6540DF00CB67F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A0144B1B6540DF00CB67F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		86A0144D1B6540DF00CB67F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 		86A014471B6540DF00CB67F4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				86A014461B6540DF00CB67F4 /* recSysAppV1.app */,
+				86A014461B6540DF00CB67F4 /* MiRec..app */,
 				86A0145F1B6540DF00CB67F4 /* recSysAppV1Tests.xctest */,
 			);
 			name = Products;
@@ -282,7 +282,7 @@
 			);
 			name = recSysAppV1;
 			productName = recSysAppV1;
-			productReference = 86A014461B6540DF00CB67F4 /* recSysAppV1.app */;
+			productReference = 86A014461B6540DF00CB67F4 /* MiRec..app */;
 			productType = "com.apple.product-type.application";
 		};
 		86A0145E1B6540DF00CB67F4 /* recSysAppV1Tests */ = {
@@ -547,8 +547,7 @@
 				INFOPLIST_FILE = recSysAppV1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = MiRec.;
 			};
 			name = Debug;
 		};
@@ -562,8 +561,7 @@
 				INFOPLIST_FILE = recSysAppV1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = MiRec.;
 			};
 			name = Release;
 		};

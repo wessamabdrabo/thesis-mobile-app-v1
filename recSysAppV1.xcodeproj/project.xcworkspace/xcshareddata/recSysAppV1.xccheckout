@@ -10,14 +10,14 @@
 	<string>recSysAppV1</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>FB210A856E8FC72C02FC1B7D144763F6414C2AF0</key>
+		<key>B2CF499838F0B9B6B31ADF8177187ED370616021</key>
 		<string>https://github.com/wessamabdrabo/thesis-mobile-app-v1.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>recSysAppV1.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>FB210A856E8FC72C02FC1B7D144763F6414C2AF0</key>
+		<key>B2CF499838F0B9B6B31ADF8177187ED370616021</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>FB210A856E8FC72C02FC1B7D144763F6414C2AF0</string>
+	<string>B2CF499838F0B9B6B31ADF8177187ED370616021</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>FB210A856E8FC72C02FC1B7D144763F6414C2AF0</string>
+			<string>B2CF499838F0B9B6B31ADF8177187ED370616021</string>
 			<key>IDESourceControlWCCName</key>
 			<string>thesis-mobile-app-v1</string>
 		</dict>

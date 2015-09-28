@@ -17,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.nameTextField.delegate = self;
+    self.emailTextField.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -24,7 +26,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    return YES;
+}
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
 /*
 #pragma mark - Navigation
 
